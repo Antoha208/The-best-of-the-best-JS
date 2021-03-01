@@ -1,14 +1,5 @@
-const levels = document.querySelectorAll(".main-text-list__item");
+const levels = document.querySelectorAll('.main-text-list__item');
 console.log(levels)
-
-/*levels.forEach(level => {
-	level.addEventListener("click", event => console.log(event))
-})*/
-
-/*
-const searchActive = levels.addEventListener('click', event => document.querySelectorAll(".main-text-list__item-active"));
-console.log(searchActive)
-*/
 
 levels.forEach(level => {
 	level.addEventListener("click", setLevel)
@@ -20,56 +11,86 @@ function setLevel(level) {
   document.getElementById("hard").classList.remove("main-text-list__item-active")
   level.target.classList.add("main-text-list__item-active")
 }
-/*console.log(setLevel)*/
-
-
 
 const startGame = document.querySelector(".main-text-button");
-/*console.log(startGame)*/
 startGame.addEventListener("click", selectedLevel)
 
-let background = document.createElement('div');
-  background.className = 'table'
-  background.url = ('../img/Background.png')
-  background.style.backgroundPosition = 'cover'
-  document.body.append(background)
-  /*console.log(background)*/
+  function selectedLevel () {
+    const searchActive = document.querySelector(".main-text-list__item-active");
 
-function selectedLevel () {
-  const searchActive = document.querySelector(".main-text-list__item-active");
-  console.log(searchActive)
-  searchActive.event.target.id = 'easy'
-  console.log(searchActive)
-  switch (event.target.id) {
-    case event.target.id === "easy":
-    const cardsEasy = document.createElement('div');
-    cardsEasy.url = ('../img/Карта 1.png');
-    document.body.append(cardsEasy);
-      break;
-    case event.target.id === "medium":
-    const cardsMedium = document.createElement('div');
-    cardsMedium.url = ('../img/Карта 1.png');
-    document.body.append(cardsMedium);
-      break;
-    case event.target.id ==="hard":
-    const cardsHard = document.createElement('div');
-    cardsHard.url = ('../img/Карта 1.png');
-    document.body.append(cardsHard);
-    default: ('');
+    let background = document.createElement('div');
+      background.className = 'table'
+      background.url = ('../img/Background.png')
+      document.body.append(background)
+      let searchHaeder = document.querySelector('.header');
+      let searchMain = document.querySelector('.main');
+      searchHaeder.classList.toggle('header-none')
+      searchMain.classList.toggle('main-none')
+
+    if (searchActive) {
+      let level = null;
+      let gameEasyMedium = document.createElement('div');
+      let gameHard = document.createElement('div');
+      switch (searchActive.id) {
+        case "easy":
+          level = 3;
+          gameEasyMedium.className = 'table-easy-medium'
+          document.body.lastChild.append(gameEasyMedium)
+          break;
+        case "medium":
+          level = 6;
+          gameEasyMedium.className = 'table-easy-medium'
+          document.body.lastChild.append(gameEasyMedium);
+          break;
+        case "hard":
+          level = 10;
+          gameHard.className = 'table-hard'
+          document.body.lastChild.append(gameHard)
+      }
+
+      function createCard() {
+        let cardWithBug = document.createElement('div');
+          cardWithBug.className = 'picture-level-bug'
+        let card = document.createElement('div');
+        card.className = 'picture-level'
+        let cardFront = document.createElement('div');
+        cardFront.className = 'picture-level-front'
+        card.append(cardFront)
+        let cardBack = document.createElement('div');
+        cardBack.className = 'picture-level-back'
+        card.append(cardBack)
+        switch (searchActive.id) {
+          case "easy":
+          case "medium":
+             document.querySelector('.table-easy-medium').append(card)
+            break;
+          case "hard":
+             document.querySelector('.table-hard').append(card)
+        }
+        card.addEventListener('click', rotateCard)
+      }
+      for (let i=0; i<level; i++) {
+  	createCard()
+    }
+
+        let gameOver = false;
+          function rotateCard(e) {
+            gameOver ? window.location.reload(): ''
+            const arr = document.querySelectorAll('.picture-level');
+            const randomElement = arr[Math.ceil(Math.random() * arr.length)];
+
+            /*let cardInnerFront = document.createElement('div');
+            cardInnerFront.className = 'picture-level-inner-front'
+            e.target.lastChild.append(cardInnerFront)*/
+            if (e.target === randomElement) {
+              randomElement.classList.add('picture-level-bug')
+            } else {
+                e.target.classList.add('rotate')
+            }
+            gameOver = true;
+        }
+    } else {
+      alert('Please, set level')
+      window.location.reload()
+    }
   }
-}
-/*console.log(selectedLevel)*/
-
-
-
-
-function createCard() {
-const card = createElement('div');
-card.className = 'picture-level'
-document.querySelector('.table').append('card')
-card.addEventListener('click', rotateCard)
-}
-
-function rotateCard(side) {
-  side.classList.add('rotate')
-}

@@ -14,21 +14,29 @@
   color: #FFF;
 }
 
+html, body {
+height: 100%;
+}
+
 body {
-  height: 100%;
-  background: url('img/Background.png') 100%/cover no-repeat;
   margin: 0;
+  max-height: 100%;
+  background: url('img/Background.png') repeat;
+  background-size: cover;
 }
 
 .header__title {
+  font: 700 50px/59px Roboto, arial, sans-serif;
   font-size: 57px;
-  margin: 10% 0 0 10%;
-  line-height: 1.5em;
+  margin: 2% 0 0 10%;
+  line-height: 1.2em;
 }
 
 .header__text {
+  font: 400 50px/59px Roboto, arial, sans-serif;
   font-size: 20px;
   margin: 0 0 0 10%;
+  line-height: 1.2em;
 }
 
 .main {
@@ -44,10 +52,12 @@ body {
 }
 
 .main-text-list {
+  font: 700 50px/59px Roboto, arial, sans-serif;
   font-size: 50px;
 }
 
 .main-text-list__item {
+  font: 700 50px/59px Roboto, arial, sans-serif;
   line-height: 1.6em;
   text-decoration: none;
   transition: 0.5s;
@@ -68,13 +78,9 @@ body {
   padding-left: 5%;
 }
 
-/*.main-text-list__item li::marker {
-  visibility: hidden;
-  list-style-image: url('img/Rectangle 2.png');
-}*/
-
 .main-text-button {
   display: flex;
+  font: 700 50px/59px Roboto, arial, sans-serif;
   font-size: 32px;
   width: 352px;
   height: 95px;
@@ -84,6 +90,7 @@ body {
   margin-top: 15%;
   text-decoration: none;
   transition: 0.7s;
+  box-shadow: 1px 1px 2px 1px black;
 }
 
 .main-text-button:hover {
@@ -115,45 +122,121 @@ body {
   transform: rotate(30deg) translateX(60%) translateY(-30%);
 }
 
-/*КАРТА*/
+
+/* СТОЛ  И  РЕПЛЕЙС  */
 
 .table {
-  height: 100%;
-  background: url('img/Background.png') 100%/cover no-repeat;
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
 }
 
+.table-easy-medium {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: auto;
+}
+
+.table-hard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.header-none {
+  display: none;
+}
+
+.main-none {
+  display: none;
+}
+
+/*КАРТА*/
+
 .picture-level {
-  background-color: transparent;
+  position: relative;
   height: 341px;
   width: 218px;
+  transition: 0.3s;
+  margin: 12px;
+  margin-bottom: 0;
+  margin-top: 0;
   perspective: 1000px;
 }
 
-.picture-level__card {
+/*.picture-level-inner {
   position: relative;
+  background: url('img/Карта 1.png') 100%/cover no-repeat;
   width: 100%;
   height: 100%;
-  background-color: gray;
-  text-align: center;
-  border: 3px solid black;
+  transition: transform 0.8s;
   transform-style: preserve-3d;
-}
+}*/
 
-.picture-level__card-inner-front, .picture-level__card-inner-back {
+/*.picture-level-bug,
+.rotate,
+.picture-level-inner-front {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+}*/
+
+.picture-level-front,
+.picture-level-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(180deg);
 }
 
-.picture-level__card-inner-front {
+.picture-level-front {
+  background-size: 101%;
+  transition: transform 0.6s;
   background: url('img/Карта 1.png') 100%/contain no-repeat;
 }
 
-.picture-level__card-inner-back {
+.picture-level-back {
+  background: url('img/Конец игры.png');
+  transform: rotateY(180deg);
+}
+
+.picture-level-bug {
   height: 341px;
   width: 218px;
-  transform: rotateY(180deg);
   background: url('img/Карта с багом 2.png') 100%/contain no-repeat;
+  transform: rotateY(180deg);
+}
+
+.rotate {
+  transform: rotateY(180deg);
+}
+
+.picture-level:hover {
+  transform: rotate(5deg) translateY(-25px);
+  transition: 0.3s;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  filter: drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.5));
+}
+
+.picture-level-bug:hover {
+  transform: translateY(0) rotate(0);
+}
+
+.rotate:hover {
+   transform: translateY(0) rotate(0);
+   filter: none;
 }
