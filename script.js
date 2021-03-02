@@ -77,15 +77,11 @@ startGame.addEventListener("click", selectedLevel)
           function rotateCard(e) {
             gameOver ? window.location.reload(): ''
             const arr = document.querySelectorAll('.picture-level');
-            const randomElement = arr[Math.ceil(Math.random() * arr.length)];
-
-            /*let cardInnerFront = document.createElement('div');
-            cardInnerFront.className = 'picture-level-inner-front'
-            e.target.lastChild.append(cardInnerFront)*/
+            const randomElement = arr[Math.floor(Math.random() * arr.length)];
             if (e.target === randomElement) {
-              randomElement.classList.add('picture-level-bug')
+              randomElement.parentElement.classList.add('picture-level-bug')
             } else {
-                e.target.classList.add('rotate')
+                e.target.parentElement.classList.add('rotate')
             }
             gameOver = true;
         }

@@ -19,7 +19,7 @@ height: 100%;
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   max-height: 100%;
   background: url('img/Background.png') repeat;
   background-size: cover;
@@ -165,11 +165,11 @@ body {
   position: relative;
   height: 341px;
   width: 218px;
-  transition: 0.3s;
+  transition: transform 0.3s;
   margin: 12px;
   margin-bottom: 0;
   margin-top: 0;
-  perspective: 1000px;
+  transform-style: preserve-3d;
 }
 
 /*.picture-level-inner {
@@ -197,20 +197,21 @@ body {
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: rotateY(180deg);
+  /*backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;*/
+  /*transform: rotateY(180deg);*/
 }
 
 .picture-level-front {
-  background-size: 101%;
+  background-size: 100%;
   transition: transform 0.6s;
-  background: url('img/Карта 1.png') 100%/contain no-repeat;
+  background: url('img/Карта 1.png') no-repeat;
 }
 
 .picture-level-back {
   background: url('img/Конец игры.png');
   transform: rotateY(180deg);
+  backface-visibility: hidden;
 }
 
 .picture-level-bug {
@@ -227,9 +228,13 @@ body {
 .picture-level:hover {
   transform: rotate(5deg) translateY(-25px);
   transition: 0.3s;
-  transform-style: preserve-3d;
-  perspective: 1000px;
+  /*transform-style: preserve-3d;
+  perspective: 1000px;*/
   filter: drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.5));
+}
+
+.picture-level-back:hover {
+  transform: translateY(0) rotate(0);
 }
 
 .picture-level-bug:hover {
@@ -237,6 +242,10 @@ body {
 }
 
 .rotate:hover {
-   transform: translateY(0) rotate(0);
-   filter: none;
+  transform: translateY(0) rotate(0);
+  filter: none;
+}
+
+@media (max-width: 730px) {
+
 }
