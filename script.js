@@ -78,11 +78,13 @@ startGame.addEventListener("click", selectedLevel)
             gameOver ? window.location.reload(): ''
             const arr = document.querySelectorAll('.picture-level');
             const randomElement = arr[Math.floor(Math.random() * arr.length)];
-            if (e.target === randomElement) {
-              randomElement.parentElement.classList.add('picture-level-bug')
+            console.log(randomElement)
+            if (e.target === randomElement.firstChild) {
+              randomElement.firstChild.classList.add('picture-level-bug')
             } else {
-                e.target.parentElement.classList.add('rotate')
+              e.target.parentElement.classList.add('rotate')
             }
+            console.log(e.target)
             gameOver = true;
         }
     } else {
