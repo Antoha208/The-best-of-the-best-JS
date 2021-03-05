@@ -122,7 +122,6 @@ body {
   transform: rotate(30deg) translateX(60%) translateY(-30%);
 }
 
-
 /* СТОЛ  И  РЕПЛЕЙС  */
 
 .table {
@@ -160,6 +159,7 @@ body {
 }
 
 /*КАРТА*/
+
 .picture-level {
   position: relative;
   height: 341px;
