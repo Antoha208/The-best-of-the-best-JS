@@ -160,7 +160,6 @@ body {
 }
 
 /*КАРТА*/
-
 .picture-level {
   position: relative;
   height: 341px;
@@ -188,7 +187,7 @@ body {
 }
 
 .picture-level-back {
-  background: url('img/Конец игры.png');
+  background: url('img/Конец игры.png') no-repeat;
   transform: rotateY(180deg);
   backface-visibility: hidden;
 }
@@ -198,24 +197,20 @@ body {
   transform: rotateY(360deg);
 }
 
-.rotate {
-  transform: rotateY(180deg) !important;
-}
-
 .picture-level:hover {
   transform: rotate(5deg) translateY(-25px);
   transition: 0.5s;
   filter: drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.5));
 }
 
+.rotate {
+  transform: rotateY(180deg) !important;
+}
+
 .picture-level-back:hover {
   transform: translateY(0) rotate(0);
   filter: none;
 }
-
-/*.picture-level-bug:hover {
-  transform: translateY(0) rotate(0);
-}*/
 
 .rotate:hover {
   transform: translateY(0) rotate(0);
@@ -229,14 +224,12 @@ body {
   }
 
   .table-easy-medium {
-    /*max-width: 700px;*/
-    /*max-height: 600px;*/
+    max-width: 800px;
     margin: auto;
   }
 
   .table-hard {
-    /*max-width: 1200px;*/
-    /*max-height: 600px;*/
+    max-width: 1200px;
   }
 
   .picture-level {
@@ -247,22 +240,17 @@ body {
   .picture-level-front {
     height: 300px;
     width: 200px;
-    background-size: 90%;
-    transition: transform 0.6s;
-    background: url('img/Карта 1.png') 100%/contain no-repeat;
+    background-size: contain;
   }
 
   .picture-level-back {
     height: 300px;
     width: 200px;
-    background: url('img/Конец игры.png') 100%/contain no-repeat;
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
+    background-size: contain;
   }
 
   .picture-level-bug {
-    background: url('img/Карта с багом 2.png') 100%/contain no-repeat;
-    transform: rotateY(360deg);
+    background-size: contain;
   }
 }
 
@@ -276,45 +264,11 @@ body {
 @media (max-width: 1125px) {
   .table-easy-medium {
     max-width: 500px;
-    /*max-height: 600px;*/
-    margin: auto;
-  }
+}
 
   .table-hard {
     max-width: 800px;
-    /*max-height: 600px;*/
-  }
-
-  .picture-level {
-    height: 260px;
-    width: 170px;
-    margin: 6px;
-    margin-bottom: 4px;
-  }
-
-  .picture-level-front {
-    height: 260px;
-    width: 170px;
-    background-size: 90%;
-    transition: transform 0.6s;
-    background: url('img/Карта 1.png') 100%/contain no-repeat;
-  }
-
-  .picture-level-back {
-    height: 260px;
-    width: 170px;
-    background: url('img/Конец игры.png') 100%/contain no-repeat;
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
-  }
-
-  .picture-level-bug {
-    background: url('img/Карта с багом 2.png') 100%/contain no-repeat;
-    transform: rotateY(360deg);
-  }
 }
-
-/*@media (max-width: 1125px) {
   .picture-level {
     height: 220px;
     width: 140px;
@@ -325,24 +279,19 @@ body {
   .picture-level-front {
     height: 220px;
     width: 140px;
-    background-size: 90%;
-    transition: transform 0.6s;
-    background: url('img/Карта 1.png') 100%/contain no-repeat;
+    background-size: contain;
   }
 
   .picture-level-back {
     height: 220px;
     width: 140px;
-    background: url('img/Конец игры.png') 100%/contain no-repeat;
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
+    background-size: contain;
   }
 
   .picture-level-bug {
-    background: url('img/Карта с багом 2.png') 100%/contain no-repeat;
-    transform: rotateY(360deg);
+    background-size: contain;
   }
-}*/
+}
 
 @media (max-width: 1000px) {
   .header__title {
@@ -372,17 +321,15 @@ body {
 @media (max-width: 770px) {
   .header__title {
     font-size: 42px;
-    line-height: 1.2em;
   }
 
   .header__text {
     font-size: 15px;
-    line-height: 1.1em;
   }
 
   .main {
-  margin-top: 10%;
-  margin-left: 10%;
+    margin-top: 10%;
+    margin-left: 10%;
   }
 
   .main-text-list__item {
@@ -395,18 +342,6 @@ body {
     font-size: 23px;
     width: 220px;
     height: 80px;
-    margin-top: 3%;
-  }
-
-  .table-easy-medium {
-    max-width: 500px;
-    /*max-height: 600px;*/
-    margin: auto;
-  }
-
-  .table-hard {
-    max-width: 800px;
-    /*max-height: 600px;*/
   }
 
   .picture-level {
@@ -419,32 +354,57 @@ body {
   .picture-level-front {
     height: 210px;
     width: 120px;
-    background-size: 90%;
-    transition: transform 0.6s;
-    background: url('img/Карта 1.png') 100%/contain no-repeat;
+    background-size: contain;
   }
 
   .picture-level-back {
     height: 210px;
     width: 120px;
-    background: url('img/Конец игры.png') 100%/contain no-repeat;
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
+    background-size: contain;
   }
 
   .picture-level-bug {
-    background: url('img/Карта с багом 2.png') 100%/contain no-repeat;
-    transform: rotateY(360deg);
+    background-size: contain;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 660px) {
+  .table-easy-medium {
+    max-width: 400px;
+  }
+
+  .table-hard {
+    max-width: 600px;
+  }
+
+  .picture-level {
+    height: 180px;
+    width: 90px;
+  }
+
+  .picture-level-front {
+    height: 180px;
+    width: 90px;
+    background-size: contain;
+  }
+
+  .picture-level-back {
+    height: 180px;
+    width: 90px;
+    background-size: contain;
+  }
+
+  .picture-level-bug {
+    background-size: contain;
+  }
+}
+
+@media (max-width: 600px) {
 
   .header__title {
     text-align: center;
     font-size: 37px;
     margin: 2% 0 0 0;
-    line-height: 1.2em;*/
   }
 
   .header__text {
@@ -466,7 +426,8 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 2%;
-    width: 100%;
+    margin: 0 auto;
+    width: 90%;
     align-items: center;
   }
 
@@ -499,4 +460,90 @@ body {
     width: 50%;
     background-position: center;
   }
+
+@media (max-width: 510px) {
+
+  .table-easy-medium {
+    max-width: 310px;
+  }
+
+  .table-hard {
+    max-width: 500px;
+  }
+
+  .picture-level {
+    height: 150px;
+    width: 75px;
+  }
+
+  .picture-level-front {
+    height: 160px;
+    width: 75px;
+    background-size: contain;
+  }
+
+  .picture-level-back {
+    height: 160px;
+    width: 75px;
+    background-size: contain;
+  }
+
+  .picture-level-bug {
+    background-size: contain;
+  }
+
+@media (max-width: 440px) {
+
+  .table-easy-medium {
+    max-width: 280px;
+  }
+
+  .table-hard {
+    max-width: 400px;
+  }
+
+  .picture-level {
+    height: 130px;
+    width: 60px;
+  }
+
+  .picture-level-front {
+    height: 130px;
+    width: 60px;
+    background-size: contain;
+  }
+
+  .picture-level-back {
+    height: 130px;
+    width: 60px;
+    background-size: contain;
+  }
+
+  .picture-level-bug {
+    background-size: contain;
+  }
+
+  @media (max-width: 360px) {
+
+    .picture-level {
+      height: 110px;
+      width: 50px;
+    }
+
+    .picture-level-front {
+      height: 110px;
+      width: 50px;
+      background-size: contain;
+    }
+
+    .picture-level-back {
+      height: 110px;
+      width: 50px;
+      background-size: contain;
+    }
+
+    .picture-level-bug {
+      background-size: contain;
+    }
+
 }

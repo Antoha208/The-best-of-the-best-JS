@@ -1,5 +1,4 @@
 const levels = document.querySelectorAll('.main-text-list__item');
-console.log(levels)
 
 levels.forEach(level => {
 	level.addEventListener("click", setLevel)
@@ -50,7 +49,7 @@ startGame.addEventListener("click", selectedLevel)
 
       function createCard() {
         let cardWithBug = document.createElement('div');
-          cardWithBug.className = 'picture-level-bug'
+        cardWithBug.className = 'picture-level-bug'
         let card = document.createElement('div');
         card.className = 'picture-level'
         let cardFront = document.createElement('div');
@@ -84,7 +83,6 @@ startGame.addEventListener("click", selectedLevel)
             } else {
               e.target.parentElement.classList.add('rotate')
             }
-            console.log(e.target)
             gameOver = true;
         }
     } else {
