@@ -52,12 +52,15 @@ startGame.addEventListener("click", selectedLevel)
         cardWithBug.className = 'picture-level-bug'
         let card = document.createElement('div');
         card.className = 'picture-level'
+        let cardInner = document.createElement('div');
+        cardInner.className = 'picture-level-inner'
+        card.append(cardInner)
         let cardFront = document.createElement('div');
         cardFront.className = 'picture-level-front'
-        card.append(cardFront)
+        cardInner.append(cardFront)
         let cardBack = document.createElement('div');
         cardBack.className = 'picture-level-back'
-        card.append(cardBack)
+        cardInner.append(cardBack)
         switch (searchActive.id) {
           case "easy":
           case "medium":
@@ -66,26 +69,31 @@ startGame.addEventListener("click", selectedLevel)
           case "hard":
              document.querySelector('.table-hard').append(card)
         }
+
         card.addEventListener('click', rotateCard)
       }
       for (let i=0; i<level; i++) {
   	createCard()
     }
 
-        let gameOver = false;
-          function rotateCard(e) {
-            gameOver ? window.location.reload(): ''
-            const arr = document.querySelectorAll('.picture-level');
-            const randomElement = arr[Math.floor(Math.random() * arr.length)];
-            console.log(randomElement)
+    let gameOver = false;
+      function rotateCard(e) {
+        if (gameOver === false) {
+          const arr = document.querySelectorAll('.picture-level-inner');
+          const randomElement = arr[Math.floor(Math.random() * arr.length)];
             if (e.target === randomElement.firstChild) {
-              randomElement.firstChild.classList.add('picture-level-bug')
+              randomElement.firstElementChild.classList.add('picture-level-bug')
             } else {
               e.target.parentElement.classList.add('rotate')
             }
-            gameOver = true;
-        }
-    } else {
+         }
+      else {
+        event.preventDefault(rotateCard);
+        window.location.reload()
+      }
+      gameOver = true
+      }
+  } else {
       alert('Please, set level')
       window.location.reload()
     }
