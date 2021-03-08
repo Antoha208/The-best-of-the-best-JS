@@ -40,10 +40,18 @@ body {
 }
 
 .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-flow: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-flow: nowrap;
+      flex-flow: nowrap;
   margin: 0 0 0 10%;
 }
 
@@ -60,6 +68,8 @@ body {
   font: 700 50px/59px Roboto, arial, sans-serif;
   line-height: 1.6em;
   text-decoration: none;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
   padding-left: 5%;
   list-style-type: none;
@@ -69,6 +79,8 @@ body {
 .main-text-list__item:hover {
   color: #D62B2E;
   cursor: pointer;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -79,39 +91,58 @@ body {
 }
 
 .main-text-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font: 700 50px/59px Roboto, arial, sans-serif;
   font-size: 32px;
   width: 352px;
   height: 95px;
   background-color: #D62B2E;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 15%;
   text-decoration: none;
+  -webkit-transition: 0.7s;
+  -o-transition: 0.7s;
   transition: 0.7s;
-  box-shadow: 1px 1px 2px 1px black;
+  -webkit-box-shadow: 1px 1px 2px 1px black;
+          box-shadow: 1px 1px 2px 1px black;
 }
 
 .main-text-button:hover {
   background-color: #FFF;
   color: #D62B2E;
+  -webkit-transition: 0.7s;
+  -o-transition: 0.7s;
   transition: 0.7s;
 }
 
 .picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 50%;
   height: 341px;
   margin-top: 10%;
 }
 
 .picture__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 34%;
   background: url('img/Карта 1.png') 100%/contain no-repeat;
-  transform: rotate(15deg) translateX(-100%);
+  -webkit-transform: rotate(15deg) translateX(-100%);
+      -ms-transform: rotate(15deg) translateX(-100%);
+          transform: rotate(15deg) translateX(-100%);
   margin: 0px;
 }
 
@@ -119,33 +150,55 @@ body {
   content: '';
   width: 100%;
   background: url('img/Карта 1.png') 100%/contain no-repeat;
-  transform: rotate(30deg) translateX(60%) translateY(-30%);
+  -webkit-transform: rotate(30deg) translateX(60%) translateY(-30%);
+      -ms-transform: rotate(30deg) translateX(60%) translateY(-30%);
+          transform: rotate(30deg) translateX(60%) translateY(-30%);
 }
 
 /* СТОЛ  И  РЕПЛЕЙС  */
 
 .table {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 100vh;
   width: 100%;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .table-easy-medium {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   max-width: 800px;
   margin: auto;
 }
 
 .table-hard {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   max-width: 1250px;
   margin: auto;
 }
@@ -167,7 +220,8 @@ body {
   margin: 12px;
   margin-bottom: 8px;
   margin-top: 0;
-  perspective: 1000px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
 .picture-level-inner {
@@ -177,21 +231,33 @@ body {
   margin: 12px;
   margin-bottom: 8px;
   margin-top: 0;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  -o-transition: transform 0.8s;
   transition: transform 0.8s;
-  transform-style: preserve-3d;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 .picture-level:hover {
-  animation: hover;
-  animation-duration: 0.7s;
-  animation-timing-function: ease-out;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-  filter: drop-shadow(20px 20px 25px);
+  -webkit-animation: hover;
+          animation: hover;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-filter: drop-shadow(20px 20px 25px);
+          filter: drop-shadow(20px 20px 25px);
 }
 
 .rotate {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .picture-level-front,
@@ -201,45 +267,77 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .picture-level-front {
   background-size: contain;
+  -webkit-transition: -webkit-transform 0.6s;
+  transition: -webkit-transform 0.6s;
+  -o-transition: transform 0.6s;
   transition: transform 0.6s;
+  transition: transform 0.6s, -webkit-transform 0.6s;
   background: url('img/Карта 1.png') no-repeat;
-  backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
 }
 
 .picture-level-back {
   background: url('img/Конец игры.png') 100% no-repeat;
   background-size: contain;
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transition: 0.8s;
+  -o-transition: 0.8s;
   transition: 0.8s;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
-/*.rotate .picture-level-back {
-  backface-visibility: visible;
-}*/
+.rotate .picture-level-back {
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+}
 
 .picture-level-bug {
   background: url('img/Карта с багом 2.png') 100%/contain no-repeat;
-  transform: rotateY(360deg);
+  -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+  -webkit-transition: 0.8s;
+  -o-transition: 0.8s;
   transition: 0.8s;
+}
+
+@-webkit-keyframes hover {
+  from {
+    -webkit-transform: rotate(0deg) translateY(0px);
+            transform: rotate(0deg) translateY(0px);
+  }
+  50% {
+    -webkit-transform: rotate(-5deg) translateY(-25px);
+            transform: rotate(-5deg) translateY(-25px);
+  }
+  to {
+    -webkit-transform: rotate(-3deg) translateY(-20px);
+            transform: rotate(-3deg) translateY(-20px);
+  }
 }
 
 @keyframes hover {
   from {
-    transform: rotate(0deg) translateY(0px);
+    -webkit-transform: rotate(0deg) translateY(0px);
+            transform: rotate(0deg) translateY(0px);
   }
   50% {
-    transform: rotate(-5deg) translateY(-25px);
+    -webkit-transform: rotate(-5deg) translateY(-25px);
+            transform: rotate(-5deg) translateY(-25px);
   }
   to {
-    transform: rotate(-3deg) translateY(-20px);
+    -webkit-transform: rotate(-3deg) translateY(-20px);
+            transform: rotate(-3deg) translateY(-20px);
   }
 }
 
@@ -295,6 +393,7 @@ body {
   .table-hard {
     max-width: 800px;
 }
+
   .picture-level {
     height: 220px;
     width: 140px;
@@ -309,7 +408,7 @@ body {
   }
 
   .picture-level-back {
-    height: 220px;
+    height: 215px;
     width: 140px;
     background-size: contain;
   }
@@ -384,7 +483,7 @@ body {
   }
 
   .picture-level-back {
-    height: 210px;
+    height: 180px;
     width: 120px;
     background-size: contain;
   }
@@ -415,7 +514,7 @@ body {
   }
 
   .picture-level-back {
-    height: 180px;
+    height: 140px;
     width: 90px;
     background-size: contain;
   }
@@ -441,20 +540,32 @@ body {
   }
 
   .main {
-    justify-content: center;
-    align-items: center;
-    flex-flow: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
     margin: 0;
     margin-top: 4%;
   }
 
   .main-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin-top: 2%;
     margin: 0 auto;
     width: 90%;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .main-text-list {
@@ -478,7 +589,9 @@ body {
   .picture {
     width: 100%;
     height: 300px;
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     margin: 20%;
   }
 
@@ -486,6 +599,7 @@ body {
     width: 50%;
     background-position: center;
   }
+}
 
 @media (max-width: 510px) {
 
@@ -503,13 +617,13 @@ body {
   }
 
   .picture-level-front {
-    height: 160px;
+    height: 150px;
     width: 75px;
     background-size: contain;
   }
 
   .picture-level-back {
-    height: 160px;
+    height: 115px;
     width: 75px;
     background-size: contain;
   }
@@ -517,6 +631,7 @@ body {
   .picture-level-bug {
     background-size: contain;
   }
+}
 
 @media (max-width: 440px) {
 
@@ -540,7 +655,7 @@ body {
   }
 
   .picture-level-back {
-    height: 130px;
+    height: 90px;
     width: 60px;
     background-size: contain;
   }
@@ -548,7 +663,7 @@ body {
   .picture-level-bug {
     background-size: contain;
   }
-
+}
   @media (max-width: 360px) {
 
     .table-easy-medium {
@@ -567,7 +682,7 @@ body {
     }
 
     .picture-level-back {
-      height: 110px;
+      height: 75px;
       width: 50px;
       background-size: contain;
     }
@@ -575,5 +690,4 @@ body {
     .picture-level-bug {
       background-size: contain;
     }
-
 }
